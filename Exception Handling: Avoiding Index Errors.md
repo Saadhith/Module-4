@@ -1,34 +1,34 @@
-# File Handling in Python: Count Lines Not Starting with 'T'
+# Exception Handling in Python: Avoiding Index Errors
 
 ## 🎯 Aim
-To write a Python program that counts the number of lines in a text file `story.txt` that do **not** start with the alphabet `'T'`.
+To write a Python program that handles an **IndexError** when trying to access an element beyond the available range of a list.
 
 ## 🧠 Algorithm
-1. Open the file `story.txt` in **read mode**.
-2. Initialize a counter `count` to zero.
-3. Iterate through each line of the file:
-   - Check if the first character of the line is **not** `'T'`.
-   - If the line does not start with `'T'`, increment the `count` by 1.
-4. After processing all lines, print the `count` value, which represents the number of lines that do not start with `'T'`.
+1. Define a list `list1` with some integer elements.
+2. Use a **try-except** block:
+   - In the `try` block, attempt to access an index that is out of range (e.g., `list1[5]`).
+   - In the `except` block, catch the error and print a custom message `"You're out of list range"`.
+3. Print the result based on whether the index access succeeds or fails.
 
 ## 🧾 Program
 ~~~
-# Step 1: Open the file in read mode
-with open('story.txt', 'r') as file:
-    count = 0  # Step 2: Initialize the counter
+try:
+    # Taking 3 elements input from the user
+    L = []
+    for i in range(3):
+        item = ['laptop','mobile','pen']
+        L.append(item)
 
-    # Step 3: Iterate through each line
-    for line in file:
-        # Strip leading spaces and check if line does NOT start with 'T'
-        if not line.lstrip().startswith('T'):
-            count += 1  # Increment counter if condition is met
+    # Trying to access index 4
+    print(L[4])
 
-# Step 4: Print the result
-print("Number of lines not starting with 'T':", count)
+except IndexError:
+    print("check index range")
 
 ~~~
+
 ## Output
-![438348206-65ddcf20-e2b7-4282-8e6d-c1fe0421ed04](https://github.com/user-attachments/assets/84b9577e-9596-485b-bbdb-a8044130105c)
+![438332172-caa1949e-6a6a-4c0e-b152-491520238b0c](https://github.com/user-attachments/assets/eb29c8fd-e6ab-4162-877a-93d4c179ba79)
 
 ## Result
 Thus the program executed successfully.
